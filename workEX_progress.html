@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Progress - workEX</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/workEX.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="navbar">
+    <img src="{{ url_for('static', filename='images/workEX.jpg') }}" alt="workEX Logo" class="logo">
+    <nav class="nav-links">
+      <a href="{{ url_for('home') }}">Home</a>
+      <a href="{{ url_for('workout') }}">Workouts</a>
+      <a href="{{ url_for('progress') }}">Progress</a>
+      <a href="{{ url_for('settings') }}">Settings</a>
+      <a href="{{ url_for('logout') }}">Logout</a>
+    </nav>
+    <div class="theme-toggle">
+      <label class="switch">
+        <input type="checkbox" id="darkModeToggle">
+        <span class="slider round"></span>
+      </label>
+    </div>
+  </header>
+
+  <main class="dashboard">
+    <section class="welcome-section">
+      <h2>Your Weekly Progress 📈</h2>
+      <p>Track your performance and improvements over time.</p>
+    </section>
+
+    <section style="padding: 2rem;">
+      <canvas id="progressChart" style="max-width: 800px; margin: auto;"></canvas>
+    </section>
+
+    <section class="cta-section">
+      <a href="{{ url_for('home') }}" class="start-workout-btn">⬅ Back to Dashboard</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© workEX</p>
+    <a href="{{ url_for('privacy') }}">Privacy Policy</a> |
+    <a href="{{ url_for('terms') }}">Terms of Service</a> |
+    <a href="{{ url_for('contact') }}">Contact</a>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/workEX_progress.js') }}"></script>
+</body>
+</html>
